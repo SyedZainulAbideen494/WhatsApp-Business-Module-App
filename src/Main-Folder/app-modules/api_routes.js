@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://8b5e-122-172-85-46.ngrok-free.app';
 
 export const API_ROUTES = {
   login: `${API_URL}/login`,
