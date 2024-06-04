@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import './home.css';
-import Navbar from "./navbar";
+import Navbar from "../components/navbar";
 import notiIcon from '../images/icons8-notifications-64.png';
 import settingsIcon from '../images/icons8-settings-50.png';
 import menuIcon from '../images/icons8-menu-50.png';
