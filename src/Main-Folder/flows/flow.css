@@ -61,3 +61,72 @@
     color: #ccc;
     margin-top: 20px;
   }
+
+  /*Apps display*/
+
+  .apps-container {
+    padding: 40px;
+    margin: 20px;
+    background-color: #121212;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Ensure it takes the full width of its container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.apps-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.apps-container .error-msg {
+    color: red;
+    text-align: center;
+}
+
+.apps-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display apps inline */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: center; /* Center align the items */
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.apps-container ul li {
+    padding: 30px;
+    margin-right: 10px;
+    background-color: #181818;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the list item */
+}
+
+.apps-container ul li h3 {
+    color: #e4e4e4;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.apps-container ul li p {
+    color: #666;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.manage-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #121212;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Add margin to push the button down */
+}
+
+.manage-btn:hover {
+    background-color: #0056b3;
+}

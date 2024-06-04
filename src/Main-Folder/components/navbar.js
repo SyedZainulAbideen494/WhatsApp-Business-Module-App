@@ -30,7 +30,7 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
                     <img src={dashboardImg} alt="Dashboard" />
                     Dashboard
                 </button>
-                <button className={activeButton === '/flows' ? 'active' : ''} onClick={() => handleButtonClick('/flows')}>
+                <button className={activeButton === '/flow' ? 'active' : ''} onClick={() => handleButtonClick('/flow')}>
                     <img src={flowImg} alt="Flows" />
                     Flows
                 </button>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Navbar from "../components/navbar";
 import notiIcon from '../images/icons8-notifications-64.png';
 import settingsIcon from '../images/icons8-settings-50.png';
 import menuIcon from '../images/icons8-menu-50.png';
 import './flow.css';
+import { API_ROUTES } from '../app-modules/api_routes';
 
 const Flows = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +26,7 @@ const Flows = () => {
       }
 
       try {
-        const response = await axios.post('http://localhost:8080/user-apps', { token });
+        const response = await axios.post(API_ROUTES.fetchUserApps, { token });
         setApps(response.data.apps);
       } catch (error) {
         setError(error.response?.data?.error || 'Error fetching apps');
@@ -58,17 +60,18 @@ const Flows = () => {
         </div>
         <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <div className="apps-container">
-          <h2>Your Apps</h2>
-          {error && <p className="error-msg">{error}</p>}
-          <ul>
-            {apps.map(app => (
-              <li key={app.app_id}>
-                <h3>{app.app_name}</h3>
-                <p>ID: {app.app_id}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <h2>Your Apps</h2>
+      {error && <p className="error-msg">{error}</p>}
+      <ul>
+        {apps.map(app => (
+          <li key={app.app_id}>
+            <h3>{app.app_name}</h3>
+            <p>ID: {app.app_id}</p>
+            <Link to={`/app/manage/${app.app_id}`} className="manage-btn">Manage</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
       </div>
     </Fragment>
   );

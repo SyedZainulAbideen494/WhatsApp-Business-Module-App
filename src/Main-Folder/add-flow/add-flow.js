@@ -6,6 +6,7 @@ import notiIcon from '../images/icons8-notifications-64.png';
 import settingsIcon from '../images/icons8-settings-50.png';
 import menuIcon from '../images/icons8-menu-50.png';
 import './addflow.css';
+import { API_ROUTES } from '../app-modules/api_routes';
 
 const AddFlow = () => {
     const [appId, setAppId] = useState('');
@@ -26,7 +27,7 @@ const AddFlow = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:8080/apps', { appId, token, localStorageToken });
+            const response = await axios.post(API_ROUTES.addFlow, { appId, token, localStorageToken });
             setError('');
             console.log(response.data.message);
             navigate('/flow'); // Redirect to /flow on success
