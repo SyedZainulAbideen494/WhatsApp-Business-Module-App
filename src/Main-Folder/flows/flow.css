@@ -70,7 +70,7 @@
     background-color: #121212;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Ensure it takes the full width of its container */
+    max-width: 350px; /* Ensure it takes the full width of its container */
     overflow-x: auto; /* Enable horizontal scrolling */
 }
 
