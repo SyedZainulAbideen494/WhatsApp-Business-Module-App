@@ -1,0 +1,115 @@
+/* Navbar container */
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 100vh;
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-container.open {
+    transform: translateX(0);
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar-header h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.menu-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Button container */
+.navbar-buttons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* Style for each button */
+.navbar-buttons button {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: #444444;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+}
+
+.navbar-buttons button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.navbar-buttons button:hover {
+    background-color: #282828;
+}
+
+.navbar-buttons button.active {
+    color: white;
+}
+
+/* Footer with copyright */
+.navbar-footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar-footer p {
+    color: #666;
+    font-size: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-container {
+        transform: translateX(-250px);
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar-container.open {
+        transform: translateX(0);
+    }
+
+    .navbar-header {
+        padding: 10px;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #121212;
+        z-index: 1000;
+    }
+
+    .navbar-buttons {
+        padding-top: 0;
+    }
+}

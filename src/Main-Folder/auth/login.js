@@ -5,10 +5,15 @@ import { API_ROUTES } from '../app-modules/api_routes';
 import "./login.css";
 
 const Loginform = () => {
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    login();
+  };
 
   const login = () => {
     setError(""); // Clear any previous errors
@@ -30,52 +35,54 @@ const Loginform = () => {
   return (
     <Fragment>
       <div className="loginform">
-        <div className="emailinp">
-          <label>
-            <h3>Email</h3>
-          </label>
-          <br />
-          <input
-            type="text"
-            required
-            placeholder="id"
-            onChange={(e) => {
-              setemail(e.target.value);
-            }}
-          />
-        </div>
-        <div className="password">
-          <label>
-            <h3>Password</h3>
-          </label>
-          <br />
-          <input
-            type="password"
-            required
-            placeholder="password"
-            onChange={(e) => {
-              setpassword(e.target.value);
-            }}
-          />
-        </div>
-        <div className="submit-btn">
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-          <button className="btn btn-primary">
-            Cancel
-          </button>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="emailinp">
+            <label>
+              <h3>Email</h3>
+            </label>
+            <br />
+            <input
+              type="text"
+              required
+              placeholder="Email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </div>
+          <div className="password">
+            <label>
+              <h3>Password</h3>
+            </label>
+            <br />
+            <input
+              type="password"
+              required
+              placeholder="Password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+          </div>
+          <div className="submit-btn">
+            <button type="submit" className="btn btn-primary">
+              Login
+            </button>
+            <button type="button" className="btn btn-primary">
+              Cancel
+            </button>
+          </div>
+        </form>
         <div className="already">
           <p>
             Don't have an account? <Link to="/signup">Sign up</Link>
           </p>
         </div>
         {error && (
-        <div className="error-container">
-          <p className="error-msg">{error}</p>
-        </div>
-      )}
+          <div className="error-container">
+            <p className="error-msg">{error}</p>
+          </div>
+        )}
       </div>
     </Fragment>
   );
