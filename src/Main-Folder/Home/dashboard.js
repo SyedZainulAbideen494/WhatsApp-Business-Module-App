@@ -42,9 +42,6 @@ const Dashboard = () => {
                             <button className="header_button">
                                 <img src={notiIcon} alt="Notifications" />
                             </button>
-                            <button className="header_button">
-                                <img src={profilePic} alt="Profile" className="profile_pic" />
-                            </button>
                         </div>
                     </header>
                 </div>
@@ -65,6 +62,10 @@ const Dashboard = () => {
                         <button className={activeButton === '/add-flow' ? 'active' : ''} onClick={() => handleButtonClick('/add-flow')}>
                             <img src={addFlowImg} alt="Add Flow" />
                             Add Flow
+                        </button>
+                        <button className={activeButton === '/help' ? 'active' : ''} onClick={() => handleButtonClick('/help')}>
+                            <img src={profilePic} alt="Help" />
+                            My Profile
                         </button>
                         <button className={activeButton === '/logout' ? 'active' : ''} onClick={() => handleButtonClick('/logout')}>
                             <img src={logoutImg} alt="Logout" />
