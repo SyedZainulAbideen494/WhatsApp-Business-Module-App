@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './home.css';
 import dashboardImg from '../images/icons8-dashboard-50.png';
 import flowImg from '../images/icons8-flow-chart-50.png';
@@ -10,11 +11,13 @@ import profilePic from '../images/icons8-user-profile-48.png';
 
 const Navbar = ({ isMenuOpen, toggleMenu }) => {
     const [activeButton, setActiveButton] = useState(window.location.pathname);
+    const navigate = useNavigate();
 
     const handleButtonClick = (path) => {
         setActiveButton(path);
-        window.history.pushState({}, '', path);
+        navigate(path);
     };
+
 
     return (
         <div className={`navbar-container ${isMenuOpen ? 'open' : ''}`}>

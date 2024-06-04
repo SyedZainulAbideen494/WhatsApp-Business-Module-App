@@ -1,0 +1,63 @@
+.create-flow-container {
+    margin: 20px auto;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #121212;
+    text-align: center;
+  }
+  
+  .create-flow-container h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .flow-input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    margin-bottom: 9px;
+  }
+  
+  .create-flow-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #181818;
+    color: white;
+  }
+  
+  .create-flow-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .or-text {
+    margin: 5px 0;
+    color: #ccc;
+  }
+  
+  .auto-create-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #181818;
+    color: white;
+  }
+  
+  .auto-create-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  .note {
+    color: #ccc;
+    margin-top: 20px;
+  }
